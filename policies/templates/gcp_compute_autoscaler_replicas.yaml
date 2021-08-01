@@ -80,7 +80,7 @@ spec:
         	count(matches) == 0
 
           # Check that autoscaling policy has the minimum replicas
-          minimum_replicas := 2 # TODO: Replace as input
+          minimum_replicas := lib.get_default(params, "minimum_replicas", "0")
           resource_minimum_replicas := asset.resource.data.autoscalingPolicy.minNumReplicas
           minimum_replicas_meets_policy := {resource_minimum_replicas >= minimum_replicas}
 
