@@ -84,7 +84,7 @@ spec:
           resource_minimum_replicas := asset.resource.data.autoscalingPolicy.minNumReplicas
           minimum_replicas_meets_policy := {resource_minimum_replicas >= minimum_replicas}
 
-        	message := sprintf("%v is in a disallowed zone.", [asset.name])
+        	message := sprintf("%v does not meet the minimum replicas.", [asset.name])
         	metadata := {"zone": asset_zone}
         }
         #ENDINLINE
