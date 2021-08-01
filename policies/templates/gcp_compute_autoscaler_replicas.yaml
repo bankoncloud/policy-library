@@ -85,6 +85,6 @@ spec:
           minimum_replicas_meets_policy := {resource_minimum_replicas >= minimum_replicas}
 
         	message := sprintf("%v does not meet the minimum replicas.", [asset.name])
-        	metadata := {"zone": asset_zone}
+        	metadata := {"minimum_replicas": resource_minimum_replicas}
         }
         #ENDINLINE
